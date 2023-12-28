@@ -1,0 +1,44 @@
+public class Video extends Thread{
+    @Override
+    public void run() {
+        System.out.println("Video is Running");
+    }
+}
+
+public class Music extends Thread{
+    @Override
+    public void run() {
+        System.out.println("Music is low");
+    }
+}
+
+public class Timer extends  Thread{
+    @Override
+    public void run() {
+        System.out.println("Video Yet to Start");
+    }
+}
+
+public class MediaTool extends Thread{
+    @Override
+    public void run() {
+        System.out.println("Media tool opened");
+    }
+}
+
+public class VLC {
+    public static void main(String[] args) {
+        Video v = new Video();
+        v.start();
+
+        Timer t = new Timer();
+        t.start();
+
+        Music m = new Music();
+        m.start();
+
+        MediaTool m1 = new MediaTool();
+        m1.start();
+    }
+}
+
